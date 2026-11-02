@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team Project</title>
+    <title>Біздің команда жобасы</title>
 
     <style>
         * {
@@ -13,97 +13,255 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: #101827;
+            background: linear-gradient(135deg, #071526, #14243b, #101827);
             color: white;
         }
 
+        /* Жоғарғы бөлік */
         header {
-            background: #17243a;
-            padding: 25px;
+            padding: 45px 20px;
             text-align: center;
+            background: linear-gradient(120deg, #102d25, #17243a, #351522);
+            border-bottom: 2px solid #62d6a5;
         }
 
         header h1 {
+            font-size: 38px;
             color: #62d6a5;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
 
+        header p {
+            color: #d5e4ef;
+            font-size: 17px;
+        }
+
+        /* Мәзір */
         nav {
-            background: #24344e;
-            padding: 15px;
+            background: #1c304a;
+            padding: 18px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 15px;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #62d6a5;
         }
 
         main {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
         }
 
+        /* Кіріспе */
         .intro {
             text-align: center;
-            margin-bottom: 40px;
+            padding: 45px 20px;
+            margin-bottom: 45px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 20px;
+            border: 1px solid #31445c;
         }
 
         .intro h2 {
             color: #62d6a5;
-            margin-bottom: 15px;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #d5e4ef;
+        }
+
+        /* Команда */
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 35px;
         }
 
         .team {
             display: flex;
-            gap: 25px;
             justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .card {
-            background: #1e2c42;
-            padding: 30px;
-            border-radius: 15px;
-            width: 300px;
+            width: 340px;
+            padding: 35px 25px;
             text-align: center;
-            transition: 0.3s;
+            border-radius: 20px;
+            transition: 0.4s;
+            background: #1b2b40;
+            position: relative;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-12px);
+        }
+
+        /* Hulk карточкасы */
+        .hulk {
+            border: 2px solid #55d66b;
+            box-shadow: 0 0 20px rgba(85,214,107,0.15);
+        }
+
+        .hulk h3 {
+            color: #70ed77;
+        }
+
+        .hulk .hero-name {
+            color: #70ed77;
+        }
+
+        .hulk .card-button {
+            background: #70ed77;
+            color: #102817;
+        }
+
+        .hulk .card-button:hover {
+            background: #36b84d;
+        }
+
+        /* Spider-Man карточкасы */
+        .spiderman {
+            border: 2px solid #ef4545;
+            box-shadow: 0 0 20px rgba(239,69,69,0.15);
+        }
+
+        .spiderman h3 {
+            color: #ff6565;
+        }
+
+        .spiderman .hero-name {
+            color: #ff6565;
+        }
+
+        .spiderman .card-button {
+            background: #e84141;
+            color: white;
+        }
+
+        .spiderman .card-button:hover {
+            background: #b91e2b;
+        }
+
+        .hero-icon {
+            font-size: 65px;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            color: #62d6a5;
+            font-size: 24px;
             margin-bottom: 15px;
         }
 
-        .card a {
+        .card p {
+            margin: 12px 0;
+            color: #e0e8f0;
+            line-height: 1.6;
+        }
+
+        .hero-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .role {
             display: inline-block;
-            margin-top: 20px;
-            background: #62d6a5;
-            color: #101827;
-            padding: 12px 20px;
-            border-radius: 8px;
+            margin-top: 8px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        .card-button {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 13px 25px;
+            border-radius: 10px;
             text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
+        /* Жоба туралы */
         .about {
-            margin-top: 50px;
+            margin-top: 70px;
+            padding: 40px 25px;
             text-align: center;
-            line-height: 1.7;
+            line-height: 1.9;
+            background: rgba(255,255,255,0.04);
+            border-radius: 20px;
+            border: 1px solid #31445c;
         }
 
+        .about h2 {
+            color: #62d6a5;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .about p {
+            color: #d5e4ef;
+        }
+
+        /* Төменгі бөлік */
         footer {
-            background: #17243a;
-            padding: 20px;
+            margin-top: 60px;
+            padding: 25px;
             text-align: center;
-            margin-top: 50px;
+            background: #17243a;
+            border-top: 2px solid #62d6a5;
+            color: #d5e4ef;
+        }
+
+        footer span {
+            color: #62d6a5;
+            font-weight: bold;
+        }
+
+        /* Телефонға бейімдеу */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -111,67 +269,112 @@
 <body>
 
     <header>
-        <h1>OUR TEAM PROJECT</h1>
-        <p>Collaborative Website Development</p>
+        <h1>БІЗДІҢ КОМАНДА ЖОБАСЫ</h1>
+        <p>Бірлескен веб-сайт әзірлеу</p>
     </header>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#team">Our Team</a>
-        <a href="#about">About Project</a>
+        <a href="#home">Басты бет</a>
+        <a href="#team">Біздің команда</a>
+        <a href="#about">Жоба туралы</a>
     </nav>
 
     <main>
 
+        <!-- Кіріспе -->
         <section class="intro" id="home">
-            <h2>Welcome to Our Project!</h2>
+            <h2>Біздің жобаға қош келдіңіз!</h2>
+
             <p>
-                We are developing a collaborative website using
-                HTML, CSS, Git and GitHub.
+                Біз HTML, CSS, Git және GitHub технологияларын
+                пайдалана отырып, бірлескен веб-сайт әзірлеп жатырмыз.
+                Біздің мақсатымыз – командамен жұмыс істеу,
+                бағдарламалау және заманауи веб-дизайн дағдыларын дамыту.
             </p>
         </section>
 
+        <!-- Команда мүшелері -->
         <section id="team">
-            <h2 style="text-align:center; margin-bottom:25px;">
-                Meet Our Team
-            </h2>
+
+            <h2 class="section-title">Біздің командамыз</h2>
 
             <div class="team">
 
-                <div class="card">
-            <h3>Turgali Zhanerke</h3>
-            <p>Student and Web Developer</p>
-            <p>Role: Developer</p>
-                    <a href="Turgali-favorite-hero.html">
-                        Explore Hulk
+                <!-- Hulk -->
+                <div class="card hulk">
+
+                    <div class="hero-icon">💚</div>
+
+                    <h3>Тұрғали Жанерке</h3>
+
+                    <p>Студент және веб-әзірлеуші</p>
+
+                    <p class="hero-name">Сүйікті кейіпкері: Hulk</p>
+
+                    <span class="role">Рөлі: Developer</span>
+
+                    <br>
+
+                    <a href="Turgali-favorite-hero.html"
+                       class="card-button">
+                        Hulk туралы білу
                     </a>
+
                 </div>
 
-                <div class="card">
-             <h3>Turgali Zhanerke</h3>
-             <p>Student and Web Developer</p>
-             <p>Role: Developer</p>
-                    <a href="Aiganym-favorite-hero.html">
-                        Explore Hero
+                <!-- Spider-Man -->
+                <div class="card spiderman">
+
+                    <div class="hero-icon">🕷️</div>
+
+                    <h3>Олжабай Айғаным</h3>
+
+                    <p>Студент және веб-әзірлеуші</p>
+
+                    <p class="hero-name">Сүйікті кейіпкері: Spider-Man</p>
+
+                    <span class="role">Рөлі: Team Lead</span>
+
+                    <br>
+
+                    <a href="Aiganym-favorite-hero.html"
+                       class="card-button">
+                        Spider-Man туралы білу
                     </a>
+
                 </div>
 
             </div>
         </section>
 
+        <!-- Жоба туралы -->
         <section class="about" id="about">
-            <h2>About Our Project</h2>
+
+            <h2>Жоба туралы</h2>
+
             <p>
-                This project demonstrates teamwork,
-                version control, branching, pull requests
-                and code review using GitHub.
+                Бұл жоба командалық жұмысты, Git және GitHub
+                арқылы нұсқаларды басқаруды, тармақтар құруды,
+                Pull Request жасауды және кодты тексеруді көрсетеді.
             </p>
+
+            <p>
+                Біздің команда мүшелері өз міндеттерін бөлісіп,
+                ортақ мақсатқа бірге жұмыс істейді.
+            </p>
+
         </section>
 
     </main>
 
     <footer>
-        <p>Created by Turgali Zhanerke and Aiganym</p>
+        <p>
+            Жобаны әзірлеген:
+            <span>Тұрғали Жанерке</span> және
+            <span>Олжабай Айғаным</span>
+        </p>
+
+        <p>© 2026 Біздің команда жобасы</p>
     </footer>
 
 </body>
