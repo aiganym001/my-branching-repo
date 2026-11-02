@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Superhero - Hulk</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #07140c;
+            color: white;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #102c18, #276b32);
+            text-align: center;
+            padding: 70px 20px;
+            border-bottom: 3px solid #7cff63;
+        }
+
+        header h1 {
+            font-size: 48px;
+            color: #8cff70;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: appear 1.5s ease;
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 15px;
+            color: #d7ffd2;
+        }
+
+        nav {
+            background: #102518;
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #a5ff8c;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 10px #7cff63;
+        }
+
+        .hero {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            background:
+                radial-gradient(circle, #286c32, #07140c 70%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h2 {
+            font-size: 55px;
+            color: #9cff83;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px #39d353;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #e2ffe0;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #75e65c;
+            color: #07140c;
+            padding: 13px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: scale(1.08);
+        }
+
+        section {
+            padding: 65px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #91ff78;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .about {
+            background: #0c1f12;
+        }
+
+        .about p {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #d4e9d3;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #183d22, #102518);
+            padding: 30px;
+            border: 1px solid #4a9c4d;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px #36b64b55;
+        }
+
+        .card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #a0ff88;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #d4e9d3;
+        }
+
+        .story {
+            background: #0c1f12;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: auto;
+            background: #17351f;
+            padding: 35px;
+            border-radius: 18px;
+            border-left: 5px solid #83f36a;
+        }
+
+        .story-content p {
+            color: #e0f5df;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #286b32, #102518);
+        }
+
+        .quote h2 {
+            color: white;
+            font-size: 28px;
+            font-style: italic;
+        }
+
+        .quote p {
+            color: #baffaa;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #050d08;
+            padding: 30px;
+            text-align: center;
+            color: #9bb69c;
+        }
+
+        footer span {
+            color: #8cff70;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 38px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            section {
+                padding: 45px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>THE INCREDIBLE HULK</h1>
+        <p>My Favorite Comic Book Superhero</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#powers">Superpowers</a>
+        <a href="#story">His Story</a>
+        <a href="#personality">Personality</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>HULK SMASH!</h2>
+
+            <p>
+                A powerful superhero with incredible strength,
+                a big heart and an unforgettable story.
+            </p>
+
+            <a href="#about" class="button">Discover Hulk</a>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <h2>Who Is Hulk?</h2>
+
+        <p>
+            Hulk is one of the most famous superheroes in the
+            Marvel Comics universe. His real name is Dr. Bruce Banner.
+            He is a brilliant scientist who was accidentally exposed
+            to a massive amount of gamma radiation during an experiment.
+
+            After this accident, Bruce gained the ability to transform
+            into a giant, incredibly strong green superhero known as Hulk.
+
+            Hulk is famous for his enormous strength, green skin
+            and powerful personality. Although he sometimes struggles
+            to control his anger, he often uses his abilities to protect
+            innocent people and save the world.
+        </p>
+    </section>
+
+    <section id="powers">
+        <h2>Hulk's Superpowers</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">💪</div>
+                <h3>Super Strength</h3>
+                <p>
+                    Hulk possesses extraordinary physical strength.
+                    His power can increase as his anger grows.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>Super Speed</h3>
+                <p>
+                    Despite his enormous size, Hulk can move
+                    surprisingly fast and react quickly in battle.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🛡️</div>
+                <h3>Durability</h3>
+                <p>
+                    His body can withstand powerful attacks,
+                    explosions and extreme physical damage.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🦘</div>
+                <h3>Super Jump</h3>
+                <p>
+                    Hulk can jump enormous distances using
+                    his powerful legs.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <h2>Hulk's Origin Story</h2>
+
+        <div class="story-content">
+            <p>
+                Bruce Banner was a talented scientist who worked
+                with gamma radiation.
+            </p>
+
+            <p>
+                During a dangerous experiment, he was exposed
+                to a huge amount of gamma energy while saving
+                another person.
+            </p>
+
+            <p>
+                This accident changed his life forever.
+                Whenever Bruce experiences intense emotions,
+                especially anger, he transforms into the Incredible Hulk.
+            </p>
+
+            <p>
+                Over time, Bruce learns more about himself
+                and tries to control the powerful creature inside him.
+                His story is about accepting yourself, controlling
+                your emotions and using your strength for good.
+            </p>
+        </div>
+    </section>
+
+    <section id="personality">
+        <h2>Why I Like Hulk</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">❤️</div>
+                <h3>Kind Heart</h3>
+                <p>
+                    Deep inside, Hulk wants to protect people
+                    and help those who need him.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔥</div>
+                <h3>Bravery</h3>
+                <p>
+                    He is not afraid to face dangerous enemies
+                    and difficult situations.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌟</div>
+                <h3>Never Gives Up</h3>
+                <p>
+                    Hulk continues fighting even when
+                    everything seems impossible.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="quote">
+        <h2>"The strongest there is!"</h2>
+        <p>Hulk — A superhero who teaches us about strength and courage.</p>
+    </div>
+
+    <footer>
+        <p>Created by <span>Turgali Zhanerke</span></p>
+        <p>My Favorite Superhero Project | 2026</p>
+        <p>Inspired by Marvel Comics</p>
+    </footer>
+
+</body>
+</html>
