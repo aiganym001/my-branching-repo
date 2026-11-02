@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorite Superhero - Hulk</title>
+    <title>Менің сүйікті суперқаһарманым — Халк</title>
 
     <style>
         * {
@@ -13,231 +12,189 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: #07140c;
+            background: #101a16;
             color: white;
             line-height: 1.7;
         }
 
         header {
-            background: linear-gradient(135deg, #102c18, #276b32);
             text-align: center;
-            padding: 70px 20px;
-            border-bottom: 3px solid #7cff63;
+            padding: 65px 20px;
+            background: linear-gradient(135deg, #064d26, #101a16, #263d2b);
+            border-bottom: 3px solid #55df70;
         }
 
         header h1 {
-            font-size: 48px;
-            color: #8cff70;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            animation: appear 1.5s ease;
+            color: #65f080;
+            font-size: 46px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #36d65c;
         }
 
         header p {
-            font-size: 20px;
-            margin-top: 15px;
-            color: #d7ffd2;
+            font-size: 19px;
+            margin-top: 10px;
         }
 
         nav {
-            background: #102518;
-            padding: 18px;
-            text-align: center;
             position: sticky;
             top: 0;
             z-index: 10;
+            text-align: center;
+            padding: 16px;
+            background: #17271e;
+            box-shadow: 0 4px 15px #0008;
         }
 
         nav a {
-            color: #a5ff8c;
+            display: inline-block;
+            color: white;
             text-decoration: none;
-            margin: 0 18px;
             font-weight: bold;
+            margin: 5px 10px;
+            padding: 8px 14px;
+            border-radius: 20px;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: white;
-            text-shadow: 0 0 10px #7cff63;
+            background: #258b43;
         }
 
-        .hero {
-            min-height: 430px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        main {
+            max-width: 1050px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        .hero-image {
             text-align: center;
-            padding: 50px 20px;
-            background:
-                radial-gradient(circle, #286c32, #07140c 70%);
+            margin-bottom: 35px;
         }
 
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h2 {
-            font-size: 55px;
-            color: #9cff83;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px #39d353;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #e2ffe0;
-            margin-bottom: 25px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #75e65c;
-            color: #07140c;
-            padding: 13px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: white;
-            transform: scale(1.08);
-        }
-
-        section {
-            padding: 65px 10%;
-        }
-
-        section h2 {
-            text-align: center;
-            color: #91ff78;
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .about {
-            background: #0c1f12;
-        }
-
-        .about p {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
-            color: #d4e9d3;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: linear-gradient(145deg, #183d22, #102518);
-            padding: 30px;
-            border: 1px solid #4a9c4d;
-            border-radius: 18px;
-            text-align: center;
+        .hero-image img {
+            width: 650px;
+            max-width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border: 4px solid #55df70;
+            border-radius: 22px;
+            box-shadow: 0 0 25px #36d65c88;
             transition: 0.4s;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px #36b64b55;
+        .hero-image img:hover {
+            transform: scale(1.03);
         }
 
-        .card .icon {
-            font-size: 45px;
+        .hero-image h2 {
+            margin-top: 18px;
+            color: #65f080;
+            font-size: 28px;
+        }
+
+        .hero-image p {
+            color: #c7e8ce;
+        }
+
+        section {
+            background: linear-gradient(135deg, #1d3326, #192820);
+            padding: 30px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            border: 1px solid #376a45;
+            box-shadow: 0 8px 20px #0004;
+        }
+
+        section h2 {
+            color: #65f080;
             margin-bottom: 15px;
+            font-size: 26px;
         }
 
-        .card h3 {
-            color: #a0ff88;
+        section p {
             margin-bottom: 12px;
         }
 
-        .card p {
-            color: #d4e9d3;
+        .powers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+        }
+
+        .power-card {
+            background: #294a34;
+            padding: 22px;
+            border-radius: 14px;
+            border-left: 4px solid #65f080;
+            transition: 0.3s;
+        }
+
+        .power-card:hover {
+            transform: translateY(-8px);
+            background: #347447;
+        }
+
+        .power-card h3 {
+            color: #8bffa0;
+            margin-bottom: 10px;
         }
 
         .story {
-            background: #0c1f12;
+            background: #243d2c;
+            border-left: 5px solid #65f080;
         }
 
-        .story-content {
-            max-width: 900px;
-            margin: auto;
-            background: #17351f;
-            padding: 35px;
-            border-radius: 18px;
-            border-left: 5px solid #83f36a;
+        .personality {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
         }
 
-        .story-content p {
-            color: #e0f5df;
-            margin-bottom: 15px;
+        .personality div {
+            background: #294a34;
+            padding: 18px;
+            text-align: center;
+            border-radius: 12px;
         }
 
         .quote {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #286b32, #102518);
-        }
-
-        .quote h2 {
-            color: white;
-            font-size: 28px;
+            font-size: 23px;
             font-style: italic;
-        }
-
-        .quote p {
-            color: #baffaa;
-            margin-top: 15px;
+            color: #8bffa0;
         }
 
         footer {
-            background: #050d08;
-            padding: 30px;
+            background: #0b160f;
             text-align: center;
-            color: #9bb69c;
-        }
-
-        footer span {
-            color: #8cff70;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            padding: 25px;
+            border-top: 2px solid #55df70;
+            color: #c7e8ce;
         }
 
         @media (max-width: 600px) {
             header h1 {
-                font-size: 34px;
-            }
-
-            .hero h2 {
-                font-size: 38px;
+                font-size: 30px;
             }
 
             nav a {
-                display: inline-block;
-                margin: 5px;
+                margin: 4px;
+                padding: 7px;
             }
 
             section {
-                padding: 45px 6%;
+                padding: 20px;
+            }
+
+            .hero-image img {
+                height: 250px;
             }
         }
     </style>
@@ -246,167 +203,126 @@
 <body>
 
     <header>
-        <h1>THE INCREDIBLE HULK</h1>
-        <p>My Favorite Comic Book Superhero</p>
+        <h1>КЕРЕМЕТ ХАЛК</h1>
+        <p>Менің сүйікті суперқаһарманым</p>
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#powers">Superpowers</a>
-        <a href="#story">His Story</a>
-        <a href="#personality">Personality</a>
+        <a href="#home">Басты бет</a>
+        <a href="#about">Халк туралы</a>
+        <a href="#powers">Қабілеттері</a>
+        <a href="#story">Тарихы</a>
+        <a href="#personality">Мінезі</a>
     </nav>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h2>HULK SMASH!</h2>
+    <main>
 
-            <p>
-                A powerful superhero with incredible strength,
-                a big heart and an unforgettable story.
-            </p>
-
-            <a href="#about" class="button">Discover Hulk</a>
+        <div class="hero-image" id="home">
+            <img
+                src="https://99px.ru/sstorage/53/2025/09/tmb_372972_809191.jpg"
+                alt="Халк суперқаһарманы">
+            <h2>ХАЛК КҮШІН КӨРСЕТЕДІ!</h2>
+            <p>Кек алушылардың ең күшті қаһармандарының бірі</p>
         </div>
-    </div>
 
-    <section class="about" id="about">
-        <h2>Who Is Hulk?</h2>
-
-        <p>
-            Hulk is one of the most famous superheroes in the
-            Marvel Comics universe. His real name is Dr. Bruce Banner.
-            He is a brilliant scientist who was accidentally exposed
-            to a massive amount of gamma radiation during an experiment.
-
-            After this accident, Bruce gained the ability to transform
-            into a giant, incredibly strong green superhero known as Hulk.
-
-            Hulk is famous for his enormous strength, green skin
-            and powerful personality. Although he sometimes struggles
-            to control his anger, he often uses his abilities to protect
-            innocent people and save the world.
-        </p>
-    </section>
-
-    <section id="powers">
-        <h2>Hulk's Superpowers</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">💪</div>
-                <h3>Super Strength</h3>
-                <p>
-                    Hulk possesses extraordinary physical strength.
-                    His power can increase as his anger grows.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">⚡</div>
-                <h3>Super Speed</h3>
-                <p>
-                    Despite his enormous size, Hulk can move
-                    surprisingly fast and react quickly in battle.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🛡️</div>
-                <h3>Durability</h3>
-                <p>
-                    His body can withstand powerful attacks,
-                    explosions and extreme physical damage.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🦘</div>
-                <h3>Super Jump</h3>
-                <p>
-                    Hulk can jump enormous distances using
-                    his powerful legs.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="story" id="story">
-        <h2>Hulk's Origin Story</h2>
-
-        <div class="story-content">
+        <section id="about">
+            <h2>Халк деген кім?</h2>
             <p>
-                Bruce Banner was a talented scientist who worked
-                with gamma radiation.
+                Халк — Marvel әлеміндегі ең танымал әрі күшті
+                суперқаһармандардың бірі. Оның шын есімі —
+                Брюс Бэннер. Ол өте ақылды ғалым.
             </p>
-
             <p>
-                During a dangerous experiment, he was exposed
-                to a huge amount of gamma energy while saving
-                another person.
+                Гамма сәулесімен байланысты апаттан кейін
+                Брюс жасыл түсті алып Халкқа айналу қабілетіне ие болды.
+                Ол ашуланған кезде күші арта түседі.
             </p>
+        </section>
 
+        <section id="powers">
+            <h2>Халктың суперқабілеттері</h2>
+
+            <div class="powers">
+                <div class="power-card">
+                    <h3>Ғажайып күш</h3>
+                    <p>
+                        Халк өте ауыр заттарды көтеріп,
+                        үлкен күш көрсете алады.
+                    </p>
+                </div>
+
+                <div class="power-card">
+                    <h3>Мықты дене</h3>
+                    <p>
+                        Оның денесі күшті соққыларға
+                        және ауыр жағдайларға төтеп береді.
+                    </p>
+                </div>
+
+                <div class="power-card">
+                    <h3>Жылдам қалпына келу</h3>
+                    <p>
+                        Ол жарақаттарынан өте жылдам
+                        қалпына келе алады.
+                    </p>
+                </div>
+
+                <div class="power-card">
+                    <h3>Алысқа секіру</h3>
+                    <p>
+                        Күшті аяқтарының көмегімен
+                        өте алыс қашықтыққа секіреді.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="story">
+            <h2>Халктың тарихы</h2>
             <p>
-                This accident changed his life forever.
-                Whenever Bruce experiences intense emotions,
-                especially anger, he transforms into the Incredible Hulk.
+                Брюс Бэннер гамма сәулесімен жұмыс істейтін ғалым болған.
+                Бір тәжірибе кезінде ол үлкен мөлшердегі сәулеге ұшырайды.
             </p>
-
             <p>
-                Over time, Bruce learns more about himself
-                and tries to control the powerful creature inside him.
-                His story is about accepting yourself, controlling
-                your emotions and using your strength for good.
+                Осы оқиғадан кейін Брюс жасыл түсті алып Халкқа
+                айналу қабілетіне ие болды. Ол кейде ашуын
+                басқаруда қиналса да, өз күшін адамдарды қорғау
+                үшін пайдалануға тырысады.
             </p>
-        </div>
-    </section>
+        </section>
 
-    <section id="personality">
-        <h2>Why I Like Hulk</h2>
+        <section id="personality">
+            <h2>Халктың мінез-құлқы</h2>
 
-        <div class="cards">
+            <div class="personality">
+                <div>
+                    <h3>Күшті</h3>
+                    <p>Ол ең мықты қаһармандардың бірі.</p>
+                </div>
 
-            <div class="card">
-                <div class="icon">❤️</div>
-                <h3>Kind Heart</h3>
-                <p>
-                    Deep inside, Hulk wants to protect people
-                    and help those who need him.
-                </p>
+                <div>
+                    <h3>Батыл</h3>
+                    <p>Қауіптен қорықпайды.</p>
+                </div>
+
+                <div>
+                    <h3>Қорғаушы</h3>
+                    <p>Көмекке мұқтаж адамдарды қорғайды.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <div class="icon">🔥</div>
-                <h3>Bravery</h3>
-                <p>
-                    He is not afraid to face dangerous enemies
-                    and difficult situations.
-                </p>
-            </div>
+        <section>
+            <p class="quote">
+                «ХАЛК КҮШІН КӨРСЕТЕДІ!»
+            </p>
+        </section>
 
-            <div class="card">
-                <div class="icon">🌟</div>
-                <h3>Never Gives Up</h3>
-                <p>
-                    Hulk continues fighting even when
-                    everything seems impossible.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="quote">
-        <h2>"The strongest there is!"</h2>
-        <p>Hulk — A superhero who teaches us about strength and courage.</p>
-    </div>
+    </main>
 
     <footer>
-        <p>Created by <span>Turgali Zhanerke</span></p>
-        <p>My Favorite Superhero Project | 2026</p>
-        <p>Inspired by Marvel Comics</p>
+        <p>Авторы: Тұрғали Жанерке</p>
+        <p>Marvel суперқаһармандары туралы жоба</p>
     </footer>
 
 </body>
